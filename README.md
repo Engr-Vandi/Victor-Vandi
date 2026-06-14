@@ -37,3 +37,6 @@ Supported clean routes:
 Because you do not want to upload folders, `404.html` is required. It lets GitHub Pages recover clean links like `/website` and send them back to the main site.
 
 Upload all files, then wait 1–3 minutes for GitHub Pages to rebuild.
+
+
+Update: The Start Project and Discuss Project buttons use mailto:contact@victorvandi.com.
