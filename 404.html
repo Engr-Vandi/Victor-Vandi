@@ -1,17 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=./#home">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redirecting — Victor Vandi</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="robots" content="noindex" />
 </head>
-<body style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">
-  <main>
-    <h1 class="contact-big" style="font-size:64px;">Redirecting</h1>
-    <p class="contact-note">Taking you back to the portfolio home page.</p>
-    <a class="btn-primary" href="./#home">Go Home</a>
-  </main>
+<body>
+<script>
+(function () {
+  var validPages = ['about','work','services','articles','reviews','website','contact'];
+  var path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+
+  if (validPages.indexOf(path) !== -1) {
+    window.location.replace('/?page=' + encodeURIComponent(path));
+  } else {
+    window.location.replace('/');
+  }
+}());
+</script>
+<p>Redirecting...</p>
 </body>
 </html>
