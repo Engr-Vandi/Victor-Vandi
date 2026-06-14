@@ -1,37 +1,36 @@
 # Victor Vandi Portfolio Website
 
-GitHub Pages-ready static website.
+This is a flat GitHub Pages upload package. It does not require any folders.
 
-## Upload instructions
+## Files to upload to GitHub
 
-1. Extract the zip file.
-2. Open the extracted folder.
-3. Upload the **contents** of the folder to GitHub, not the zip file itself.
-4. Make sure `index.html` is at the root of the repository, beside `README.md` and `.nojekyll`.
-5. In GitHub, go to **Settings → Pages**.
-6. Under **Build and deployment**, choose:
-   - Source: **Deploy from a branch**
-   - Branch: **main**
-   - Folder: **/root**
-7. Save and wait for GitHub Pages to publish.
+Upload these files to the root of your repository:
 
-## Expected file structure
+- `index.html`
+- `404.html`
+- `.nojekyll`
+- `README.md`
+- `style.css`
+- `victor vandi profile.jpg`
 
-```text
-index.html
-README.md
-.nojekyll
-assets/
-  css/
-    style.css
-  js/
-    main.js
-  images/
-    victor-vandi-profile.jpg
-```
+Important: the file must be named `.nojekyll` with two lowercase L letters at the end, not `.nojeky11`.
+
+## GitHub Pages setup
+
+1. Open your repository on GitHub.
+2. Click **Add file** → **Upload files**.
+3. Drag all files from this unzipped package into the upload area.
+4. Click **Commit changes**.
+5. Go to **Settings** → **Pages**.
+6. Set source to **Deploy from a branch**.
+7. Choose branch: `main` and folder: `/root`.
+8. Save.
+
+Your custom domain should point to the GitHub Pages site.
 
 ## Notes
 
-- Do not upload only `victorvandi_github_ready.zip` to the repository. GitHub Pages will not automatically unpack it.
-- Replace the temporary internal contact buttons with your real Fiverr and Upwork profile links when ready.
-- The site is fully static. It does not need Node.js, npm, React, or a build step.
+- `index.html` contains the website HTML and JavaScript.
+- `style.css` contains the full visual design.
+- `victor vandi profile.jpg` is the profile image used by the About section and social preview metadata.
+- No `assets` folder is required in this version.
