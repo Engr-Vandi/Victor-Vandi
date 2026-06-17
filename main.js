@@ -738,6 +738,36 @@ document.querySelector('.nav-logo').addEventListener('click', function(e) {
   showPage('home', document.querySelector('.nav-links a'));
 });
 
+// Mobile hamburger toggle
+(function() {
+  const hamburger = document.getElementById('navHamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (!hamburger || !navLinks) return;
+
+  function closeMobileNav() {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinks.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', closeMobileNav);
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('#navbar') && navLinks.classList.contains('open')) {
+      closeMobileNav();
+    }
+  });
+})();
+
 /* ══ WORK PAGE TABS ══ */
 function switchTab(id, btn) {
   document.querySelectorAll('.work-tab-content').forEach(t => t.classList.remove('active'));

@@ -64,6 +64,30 @@
   }
   .nav-cta:hover { opacity: 0.85 !important; }
 
+  /* Hamburger button — hidden on desktop, shown on mobile */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 600;
+    flex-shrink: 0;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -578,6 +602,49 @@
     .hero { padding: 80px 16px 56px; }
     .hero-title { font-size: clamp(40px, 16vw, 72px); }
     .section { padding: 56px 16px; }
+  }
+
+  /* Mobile nav — hamburger + slide-down menu */
+  @media (max-width: 768px) {
+    nav {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      padding: 14px 20px;
+      gap: 0;
+    }
+    .nav-hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: rgba(7,8,10,0.99);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 20px 20px;
+      gap: 0;
+      flex-wrap: nowrap;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li { width: 100%; list-style: none; }
+    .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 13px 4px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links li:last-child a { border-bottom: none; }
+    .nav-cta {
+      margin-top: 10px !important;
+      text-align: center !important;
+      display: block !important;
+      padding: 12px 20px !important;
+      border-bottom: none !important;
+      border-radius: 2px;
+    }
   }
 
   /* ═══════════ CREATIVE DESIGNER UPGRADES ═══════════ */
