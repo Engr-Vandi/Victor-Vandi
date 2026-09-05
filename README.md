@@ -5,18 +5,23 @@ Static, no build step, deployed on GitHub Pages from the repository root.
 
 ## Files
 
+Every file sits in the repository root — no folders — so each one can be
+uploaded individually through the GitHub web interface.
+
 ```
-index.html            markup for every page (single-page app)
-404.html              GitHub Pages fallback that restores clean URLs
-CNAME                 victorvandi.com
-.nojekyll             stops Jekyll from touching the files
+index.html                markup for every page (single-page app)
+style.css                 design system + all styling
+articles.js               article content
+app.js                    routing, rendering, interactions
+404.html                  GitHub Pages fallback that restores clean URLs
+CNAME                     victorvandi.com
+.nojekyll                 stops Jekyll from touching the files
 robots.txt
 sitemap.xml
 victor-vandi-profile.jpg
-assets/css/style.css  design system + all styling
-assets/js/articles.js article content
-assets/js/app.js      routing, rendering, interactions
 ```
+
+`articles.js` must load before `app.js`; `index.html` already orders them that way.
 
 ## Routes
 
@@ -31,7 +36,7 @@ their new homes, so nothing already shared is broken.
 ## Things you edit
 
 Everything you are likely to change sits in the `CONFIG` block at the top of
-`assets/js/app.js`:
+`app.js`:
 
 | Name       | What it does |
 |------------|--------------|
@@ -43,7 +48,7 @@ Everything you are likely to change sits in the `CONFIG` block at the top of
 | `PROJECTS` | Portfolio entries. |
 | `STEPS`    | The four process steps. |
 
-Article text lives in `assets/js/articles.js` as an array of
+Article text lives in `articles.js` as an array of
 `{ tag, title, meta, body }`. URL slugs are generated from the title at runtime,
 so adding an article is just adding an object.
 
