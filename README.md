@@ -1,42 +1,63 @@
-# Victor Vandi Portfolio — Clean URL GitHub Upload
+# victorvandi.com
 
-Upload these files directly into the root of your GitHub repository:
+Personal site for **Victor Vandi** — web design & development, and video editing.
+Static, no build step, deployed on GitHub Pages from the repository root.
 
-- `index.html`
-- `404.html`
-- `.nojekyll`
-- `README.md`
-- `style.css`
-- `victor vandi profile.jpg`
+## Files
 
-No folders are required.
+```
+index.html            markup for every page (single-page app)
+404.html              GitHub Pages fallback that restores clean URLs
+CNAME                 victorvandi.com
+.nojekyll             stops Jekyll from touching the files
+robots.txt
+sitemap.xml
+victor-vandi-profile.jpg
+assets/css/style.css  design system + all styling
+assets/js/articles.js article content
+assets/js/app.js      routing, rendering, interactions
+```
 
-## What changed
+## Routes
 
-This version removes hash URLs like:
+Clean URLs, no hashes. `/`, `/work`, `/services`, `/about`, `/articles`, `/contact`,
+plus deep links to a single article at `/articles/<slug>`.
 
-`https://victorvandi.com/#website`
+GitHub Pages has no server-side rewrite, so a direct hit on `/work` returns
+`404.html`. That file forwards the path to `/?page=work`, and `app.js` restores the
+clean URL. Old links (`/website`, `/reviews`, `/portfolio`, `/packages`) redirect to
+their new homes, so nothing already shared is broken.
 
-and uses cleaner URLs like:
+## Things you edit
 
-`https://victorvandi.com/website`
+Everything you are likely to change sits in the `CONFIG` block at the top of
+`assets/js/app.js`:
 
-Supported clean routes:
+| Name       | What it does |
+|------------|--------------|
+| `PROFILES` | Fiverr and Upwork profile URLs. **Both are empty.** Paste the real URLs and the profile cards, footer links, and contact rows appear automatically. Left empty, the site falls back to an email CTA instead of showing a dead button. |
+| `EMAIL`    | Contact address used in every mailto link. |
+| `SOCIALS`  | LinkedIn / Instagram links. |
+| `TOOLS`    | Software chips on the Services page. Delete anything you don't actually use. |
+| `MARQUEE`  | The scrolling capability strip on the home page. |
+| `PROJECTS` | Portfolio entries. |
+| `STEPS`    | The four process steps. |
 
-- `/`
-- `/about`
-- `/work`
-- `/services`
-- `/articles`
-- `/reviews`
-- `/website`
-- `/contact`
+Article text lives in `assets/js/articles.js` as an array of
+`{ tag, title, meta, body }`. URL slugs are generated from the title at runtime,
+so adding an article is just adding an object.
 
-## Important GitHub Pages note
+## Contact form
 
-Because you do not want to upload folders, `404.html` is required. It lets GitHub Pages recover clean links like `/website` and send them back to the main site.
+Posts to [Web3Forms](https://web3forms.com) with the access key in `index.html`.
+If the request fails, the form shows the email address as a fallback rather than
+failing silently.
 
-Upload all files, then wait 1–3 minutes for GitHub Pages to rebuild.
+## Local preview
 
+```bash
+python3 -m http.server 8000
+```
 
-Update: The Start Project and Discuss Project buttons use mailto:contact@victorvandi.com.
+Then open <http://localhost:8000>. Direct URLs like `/work` won't resolve with a
+plain static server (no 404 fallback) — use `/?page=work` locally.

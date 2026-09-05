@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting — Victor Vandi</title>
-  <meta name="robots" content="noindex" />
-</head>
-<body>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Redirecting — Victor Vandi</title>
+<meta name="robots" content="noindex"/>
+<style>
+  html { color-scheme: dark; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: grid; place-items: center;
+    background: #08090b; color: #9aa1ab;
+    font: 400 14px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    text-align: center; padding: 24px;
+  }
+  a { color: #ff6b2c; }
+</style>
 <script>
+/*
+  GitHub Pages serves this file for any unknown path. The site is a single
+  page app with clean URLs, so forward the requested route back to index.html
+  as a query string — app.js reads it and restores the real URL.
+*/
 (function () {
-  var validPages = ['about','work','services','articles','reviews','website','contact'];
-  var path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+  var ROUTES  = ['home', 'work', 'services', 'about', 'articles', 'contact'];
+  var ALIASES = {
+    website: 'services', websites: 'services', packages: 'services',
+    reviews: 'home', testimonials: 'home', portfolio: 'work', 'about-me': 'about'
+  };
 
-  if (validPages.indexOf(path) !== -1) {
-    window.location.replace('/?page=' + encodeURIComponent(path));
+  var seg = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase().split('/');
+  var head = seg[0] || '';
+  var route = ROUTES.indexOf(head) !== -1 ? head : (ALIASES[head] || null);
+
+  if (route === 'articles' && seg[1]) {
+    location.replace('/?page=articles&a=' + encodeURIComponent(seg[1]));
+  } else if (route) {
+    location.replace('/?page=' + encodeURIComponent(route));
   } else {
-    window.location.replace('/');
+    location.replace('/');
   }
 }());
 </script>
-<p>Redirecting...</p>
+</head>
+<body>
+  <p>Redirecting… <a href="/">Go to victorvandi.com</a></p>
 </body>
 </html>
