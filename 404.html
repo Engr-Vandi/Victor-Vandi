@@ -23,10 +23,10 @@
   as a query string — app.js reads it and restores the real URL.
 */
 (function () {
-  var ROUTES  = ['home', 'work', 'services', 'about', 'articles', 'contact'];
+  var ROUTES  = ['home', 'services', 'about', 'articles', 'contact'];
   var ALIASES = {
     website: 'services', websites: 'services', packages: 'services',
-    reviews: 'home', testimonials: 'home', portfolio: 'work', 'about-me': 'about'
+    reviews: 'home', testimonials: 'home', portfolio: 'services', work: 'services', 'about-me': 'about'
   };
 
   var seg = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase().split('/');

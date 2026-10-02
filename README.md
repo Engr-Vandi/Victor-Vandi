@@ -1,6 +1,7 @@
 # victorvandi.com
 
-Personal site for **Victor Vandi** — web design & development, and video editing.
+Personal site for **Victor Vandi**, creative designer — website design &
+development, and app development.
 Static, no build step, deployed on GitHub Pages from the repository root.
 
 ## Files
@@ -25,13 +26,16 @@ victor-vandi-profile.jpg
 
 ## Routes
 
-Clean URLs, no hashes. `/`, `/work`, `/services`, `/about`, `/articles`, `/contact`,
-plus deep links to a single article at `/articles/<slug>`.
+Clean URLs, no hashes. `/`, `/services`, `/about`, `/articles`, `/contact`, plus
+deep links to a single article at `/articles/<slug>`.
 
-GitHub Pages has no server-side rewrite, so a direct hit on `/work` returns
-`404.html`. That file forwards the path to `/?page=work`, and `app.js` restores the
-clean URL. Old links (`/website`, `/reviews`, `/portfolio`, `/packages`) redirect to
-their new homes, so nothing already shared is broken.
+`/work` is **conditional**: see `PROJECTS` below. While there are no projects it
+is not a route at all and redirects to `/services`.
+
+GitHub Pages has no server-side rewrite, so a direct hit on `/services` returns
+`404.html`. That file forwards the path to `/?page=services`, and `app.js` restores
+the clean URL. Old links (`/website`, `/reviews`, `/portfolio`, `/work`,
+`/packages`) redirect to their new homes, so nothing already shared is broken.
 
 ## Things you edit
 
@@ -43,9 +47,9 @@ Everything you are likely to change sits in the `CONFIG` block at the top of
 | `PROFILES` | Fiverr and Upwork profile URLs. **Both are empty.** Paste the real URLs and the profile cards, footer links, and contact rows appear automatically. Left empty, the site falls back to an email CTA instead of showing a dead button. |
 | `EMAIL`    | Contact address used in every mailto link. |
 | `SOCIALS`  | LinkedIn / Instagram links. |
-| `TOOLS`    | Software chips on the Services page. Delete anything you don't actually use. |
+| `TOOLS`    | Software chips on the Services page. These are deliberately foundational — add the frameworks and platforms you actually ship with, and delete anything you don't use. |
 | `MARQUEE`  | The scrolling capability strip on the home page. |
-| `PROJECTS` | Portfolio entries. |
+| `PROJECTS` | Portfolio entries. **Currently empty**, and that is wired through the whole site: the Work link is hidden from the nav and footer, the home page's "Selected work" section is hidden, and `/work` redirects to `/services` — so the site never shows an empty portfolio. Add one object (`{ name, kind, url, desc, tags: [] }`) and all of it reappears on its own, including the hero's second button changing to "See the work". Add an `image` key to use a real screenshot; without one, a cover is generated from the project's own name. |
 | `STEPS`    | The four process steps. |
 
 Article text lives in `articles.js` as an array of

@@ -23,34 +23,32 @@
     { key: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/victorvandi' }
   ];
 
-  // Shown on /services. Trim anything you don't actually use.
+  // Shown on /services. These are deliberately foundational — add your own
+  // frameworks and platforms (React, Flutter, Next.js, Firebase, whatever you
+  // actually ship with) and delete anything you don't use.
   const TOOLS = [
     'HTML', 'CSS', 'JavaScript', 'Responsive layout', 'Core Web Vitals', 'On-page SEO',
-    'Figma', 'Git / GitHub', 'Adobe Photoshop', 'CapCut', 'Premiere Pro', 'DaVinci Resolve'
+    'UI/UX design', 'Prototyping', 'REST APIs', 'Figma', 'Git / GitHub', 'Adobe Photoshop'
   ];
 
   const MARQUEE = [
-    'Portfolio sites', 'Landing pages', 'Business websites', 'Long-form YouTube edits',
-    'Shorts & Reels', 'Podcast edits', 'Colour grading', 'Captions', 'Motion titles',
+    'Portfolio sites', 'Landing pages', 'Business websites', 'Mobile apps',
+    'Web apps', 'Dashboards', 'App UI/UX', 'Prototypes', 'Progressive web apps',
     'Speed & SEO fixes'
   ];
 
-  const PROJECTS = [
-    {
-      name: 'NZLUXE',
-      kind: 'Luxury e-commerce',
-      url: 'https://nzluxe.ng',
-      desc: 'A premium luxury brand storefront — restrained, fast, and built so high-intent shoppers reach checkout without friction.',
-      tags: ['E-commerce', 'Brand identity', 'Responsive build'],
-      art: 'luxe'
-    }
-  ];
+  // Portfolio entries. While this array is EMPTY the Work page is hidden from
+  // the nav, /work redirects to /services, and the home "Selected work"
+  // section stays hidden — so the site never shows an empty portfolio.
+  // Add one object here and all of that reappears on its own:
+  //   { name, kind, url, desc, tags: [], art: 'luxe' }
+  const PROJECTS = [];
 
   const STEPS = [
-    { title: 'Brief',      text: 'You tell me the goal, the audience, and anything you already have — references, footage, brand colours, an existing site. I ask the questions that stop surprises later.' },
-    { title: 'Scope & quote', text: 'I come back with what I would build, how long it takes, and one fixed number. If the scope changes mid-project, we agree the change before I touch it.' },
-    { title: 'Build',      text: 'Design and build, or edit and grade. You see real progress — a live staging link or a first cut — not a status update three weeks from now.' },
-    { title: 'Handover',   text: 'Websites go live with the source, a short walkthrough, and a working contact flow. Video is delivered in the formats you need, with revisions until it lands.' }
+    { title: 'Brief',      text: 'You tell me the goal, the audience, and anything you already have — references, brand colours, an existing site or app. I ask the questions that stop surprises later.' },
+    { title: 'Design',     text: 'Screens and flows before code. You see the thing laid out and can move it around while moving it is still cheap.' },
+    { title: 'Build',      text: 'Once the design is signed off, I build it. You get real progress on a live staging link — not a status update three weeks from now.' },
+    { title: 'Handover',   text: 'Launched with the source, a short walkthrough, and everything connected and working. Revisions until it lands.' }
   ];
 
   const $  = (s, r) => (r || document).querySelector(s);
@@ -81,38 +79,34 @@
     mail:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>'
   };
 
-  /* Editorial preview artwork for the NZLUXE build. */
-  function artLuxe(uid) {
-    const g = 'lx' + uid, b = 'lb' + uid;
+  /* Generic cover art for a project that has no screenshot yet. Renders the
+     project's own name, so any entry added to PROJECTS looks intentional.
+     Give a project an `image` instead and that is used in place of this. */
+  function coverArt(p, uid) {
+    const g = 'g' + uid, label = esc(p.name).toUpperCase();
+    const size = label.length > 10 ? 40 : label.length > 7 ? 52 : 64;
     return '' +
-      '<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NZLUXE website preview">' +
-        '<defs>' +
-          '<linearGradient id="' + g + '" x1="0%" y1="0%" x2="100%" y2="100%">' +
-            '<stop offset="0%" stop-color="#c9a84c"/><stop offset="50%" stop-color="#f2d78f"/><stop offset="100%" stop-color="#9c7429"/>' +
-          '</linearGradient>' +
-          '<linearGradient id="' + b + '" x1="0%" y1="0%" x2="100%" y2="100%">' +
-            '<stop offset="0%" stop-color="#06060a"/><stop offset="100%" stop-color="#12110d"/>' +
-          '</linearGradient>' +
-        '</defs>' +
-        '<rect width="480" height="300" fill="url(#' + b + ')"/>' +
-        '<rect x="20" y="20" width="440" height="260" fill="none" stroke="url(#' + g + ')" stroke-width="0.6" opacity="0.45"/>' +
-        '<rect x="27" y="27" width="426" height="246" fill="none" stroke="url(#' + g + ')" stroke-width="0.3" opacity="0.22"/>' +
+      '<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + esc(p.name) + ' preview">' +
+        '<defs><linearGradient id="' + g + '" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ff6b2c"/><stop offset="100%" stop-color="#ffa15c"/>' +
+        '</linearGradient></defs>' +
+        '<rect width="480" height="300" fill="#0d0f13"/>' +
+        '<rect x="20" y="20" width="440" height="260" fill="none" stroke="url(#' + g + ')" stroke-width="0.6" opacity="0.4"/>' +
         '<g stroke="url(#' + g + ')" stroke-width="1.4">' +
           '<path d="M20 20h26M20 20v26M460 20h-26M460 20v26M20 280h26M20 280v-26M460 280h-26M460 280v-26"/>' +
         '</g>' +
-        '<line x1="96" y1="98" x2="384" y2="98" stroke="url(#' + g + ')" stroke-width="0.5" opacity="0.35"/>' +
-        '<text x="240" y="72" font-family="ui-monospace,monospace" font-size="9" letter-spacing="7" fill="url(#' + g + ')" text-anchor="middle" opacity="0.7">ESTABLISHED 2024</text>' +
-        '<text x="240" y="172" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="62" letter-spacing="10" fill="url(#' + g + ')" text-anchor="middle">NZLUXE</text>' +
-        '<line x1="96" y1="196" x2="384" y2="196" stroke="url(#' + g + ')" stroke-width="0.5" opacity="0.35"/>' +
-        '<text x="240" y="226" font-family="Georgia,serif" font-style="italic" font-size="11" letter-spacing="4" fill="url(#' + g + ')" text-anchor="middle" opacity="0.55">Luxury. Redefined.</text>' +
-        '<text x="240" y="262" font-family="ui-monospace,monospace" font-size="9" letter-spacing="3" fill="url(#' + g + ')" text-anchor="middle" opacity="0.4">nzluxe.ng</text>' +
+        '<text x="240" y="72" font-family="ui-monospace,monospace" font-size="9" letter-spacing="6" fill="url(#' + g + ')" text-anchor="middle" opacity="0.7">' + esc(String(p.kind || '').toUpperCase()) + '</text>' +
+        '<text x="240" y="170" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="' + size + '" letter-spacing="6" fill="url(#' + g + ')" text-anchor="middle">' + label + '</text>' +
+        '<line x1="120" y1="200" x2="360" y2="200" stroke="url(#' + g + ')" stroke-width="0.5" opacity="0.35"/>' +
       '</svg>';
   }
 
   function projectCard(p, uid) {
     return '' +
       '<article class="card work-card reveal">' +
-        '<div class="work-shot">' + artLuxe(uid) + '</div>' +
+        '<div class="work-shot">' +
+          (p.image ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + ' preview" loading="lazy" decoding="async"/>' : coverArt(p, uid)) +
+        '</div>' +
         '<div class="work-body">' +
           '<div class="work-kind">' + esc(p.kind) + '</div>' +
           '<h3 class="work-name">' + esc(p.name) + '</h3>' +
@@ -142,7 +136,7 @@
           '<div class="work-kind">' + esc(name) + '</div>' +
           '<h3 class="card-title">Profile link coming soon</h3>' +
           '<p class="card-text">' + esc(text) + ' In the meantime, email me and I\'ll send samples and references directly.</p>' +
-          '<a class="btn btn--ghost btn--sm" style="align-self:flex-start;" href="mailto:' + EMAIL + '?subject=Video%20editing%20samples">Email for samples <span class="arw">→</span></a>' +
+          '<a class="btn btn--ghost btn--sm" style="align-self:flex-start;" href="mailto:' + EMAIL + '?subject=Portfolio%20samples%20request">Email for samples <span class="arw">→</span></a>' +
         '</div>';
     }
     return '' +
@@ -193,24 +187,41 @@
   /* ------------------------------------------------------------------------
      Build the dynamic parts of the page
      ------------------------------------------------------------------------ */
+  const HAS_WORK = PROJECTS.length > 0;
+
   function render() {
+    // The Work page only exists when there is work to put on it.
+    $$('[data-nav="work"]').forEach((li) => { li.hidden = !HAS_WORK; });
+    const homeWorkSection = $('#homeWorkSection');
+    if (homeWorkSection) homeWorkSection.hidden = !HAS_WORK;
+
+    // With a portfolio, the hero's second button should point at it.
+    const heroSecondary = $('#heroSecondary');
+    if (heroSecondary && HAS_WORK) {
+      heroSecondary.textContent = 'See the work';
+      heroSecondary.setAttribute('href', '/work');
+      heroSecondary.dataset.route = 'work';
+    }
+
     const track = $('#marqueeTrack');
     if (track) {
       const once = MARQUEE.map((m) => '<span class="marquee-item">' + esc(m) + '</span>').join('');
       track.innerHTML = once + once; // duplicated so the -50% loop is seamless
     }
 
-    const homeWork = $('#homeWorkGrid');
-    if (homeWork) homeWork.innerHTML = projectCard(PROJECTS[0], 'h') + nextProjectCard();
-
-    const workWeb = $('#workWebGrid');
-    if (workWeb) workWeb.innerHTML = PROJECTS.map((p, i) => projectCard(p, 'w' + i)).join('') + nextProjectCard();
-
     const panel = $('#platformPanel');
     if (panel) {
       panel.innerHTML =
-        platformCard('Fiverr', PROFILES.fiverr, 'Fixed-scope editing jobs, with public reviews from the clients I have delivered for.') +
-        platformCard('Upwork', PROFILES.upwork, 'Longer contracts and ongoing editing retainers, with escrow protection and a public work history.');
+        platformCard('Fiverr', PROFILES.fiverr, 'Fixed-scope website and app jobs, with public reviews from the clients I have delivered for.') +
+        platformCard('Upwork', PROFILES.upwork, 'Longer contracts and ongoing retainers, with escrow protection and a public work history.');
+    }
+
+    if (HAS_WORK) {
+      const homeWork = $('#homeWorkGrid');
+      if (homeWork) homeWork.innerHTML = projectCard(PROJECTS[0], 'h') + nextProjectCard();
+
+      const workGrid = $('#workGrid');
+      if (workGrid) workGrid.innerHTML = PROJECTS.map((p, i) => projectCard(p, 'w' + i)).join('') + nextProjectCard();
     }
 
     const tools = $('#toolChips');
@@ -271,7 +282,7 @@
     if (copy) copy.textContent = '© ' + new Date().getFullYear() + ' Victor Vandi · All rights reserved.';
 
     const bands = [
-      ['#ctaHome',     'Got a project in <span class="grad-text">mind</span>?', 'A website, a video edit, or both. Send a short brief and you will hear back — usually within the hour.'],
+      ['#ctaHome',     'Got a project in <span class="grad-text">mind</span>?', 'A website, an app, or both. Send a short brief and you will hear back — usually within the hour.'],
       ['#ctaWork',     'Want work like <span class="grad-text">this</span>?',   'Tell me what you are building and I will tell you exactly what it takes.'],
       ['#ctaServices', 'Ready to <span class="grad-text">scope</span> it?',     'Describe the project and you get a fixed number back, not a range that moves later.'],
       ['#ctaAbout',    "Let's <span class=\"grad-text\">work</span> together.",  'I take a small number of projects at a time so each one gets real attention.']
@@ -293,15 +304,20 @@
   /* ------------------------------------------------------------------------
      Routing
      ------------------------------------------------------------------------ */
-  const ROUTES  = ['home', 'work', 'services', 'about', 'articles', 'contact'];
+  const ROUTES  = ['home', 'services', 'about', 'articles', 'contact']
+                    .concat(HAS_WORK ? ['work'] : []);
   const ALIASES = { website: 'services', websites: 'services', reviews: 'home',
-                    testimonials: 'home', portfolio: 'work', 'about-me': 'about',
-                    packages: 'services', index: 'home', '': 'home' };
+                    testimonials: 'home', 'about-me': 'about',
+                    packages: 'services', index: 'home', '': 'home',
+                    // With no projects, /work and /portfolio land on Services
+                    // rather than on an empty page.
+                    work: HAS_WORK ? 'work' : 'services',
+                    portfolio: HAS_WORK ? 'work' : 'services' };
 
   const TITLES = {
-    home:     'Victor Vandi — Web Design & Video Editing',
+    home:     'Victor Vandi — Creative Designer | Websites & Apps',
     work:     'Work — Victor Vandi',
-    services: 'Services — Web Design & Video Editing — Victor Vandi',
+    services: 'Services — Website Design & App Development — Victor Vandi',
     about:    'About — Victor Vandi',
     articles: 'Articles — Web Strategy — Victor Vandi',
     contact:  'Contact — Victor Vandi'

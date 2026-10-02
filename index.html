@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Victor Vandi — Web Design &amp; Video Editing</title>
-<meta name="description" content="Victor Vandi designs and builds fast, conversion-focused websites and edits video for creators, businesses, and organisations. Direct booking — no platform middleman."/>
+<title>Victor Vandi — Creative Designer | Websites &amp; Apps</title>
+<meta name="description" content="Victor Vandi is a creative designer who designs and builds fast, conversion-focused websites and apps for creators, businesses, and organisations. Direct booking — no platform middleman."/>
 <meta name="author" content="Victor Vandi"/>
 <meta name="robots" content="index, follow"/>
 <meta name="theme-color" content="#08090b" media="(prefers-color-scheme: dark)"/>
@@ -13,13 +13,13 @@
 
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Victor Vandi"/>
-<meta property="og:title" content="Victor Vandi — Web Design &amp; Video Editing"/>
-<meta property="og:description" content="Fast, conversion-focused websites and video editing for creators, businesses, and organisations."/>
+<meta property="og:title" content="Victor Vandi — Creative Designer | Websites &amp; Apps"/>
+<meta property="og:description" content="Creative designer building fast, conversion-focused websites and apps for creators, businesses, and organisations."/>
 <meta property="og:url" content="https://victorvandi.com/"/>
 <meta property="og:image" content="https://victorvandi.com/victor-vandi-profile.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Victor Vandi — Web Design &amp; Video Editing"/>
-<meta name="twitter:description" content="Fast, conversion-focused websites and video editing for creators, businesses, and organisations."/>
+<meta name="twitter:title" content="Victor Vandi — Creative Designer | Websites &amp; Apps"/>
+<meta name="twitter:description" content="Creative designer building fast, conversion-focused websites and apps for creators, businesses, and organisations."/>
 <meta name="twitter:image" content="https://victorvandi.com/victor-vandi-profile.jpg"/>
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308090b'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%23ff6b2c' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E"/>
@@ -49,11 +49,11 @@
   "url": "https://victorvandi.com/",
   "image": "https://victorvandi.com/victor-vandi-profile.jpg",
   "email": "contact@victorvandi.com",
-  "description": "Web design, web development and video editing for creators, businesses and organisations.",
+  "description": "Website design, web development and app development for creators, businesses and organisations.",
   "founder": {
     "@type": "Person",
     "name": "Victor Vandi",
-    "jobTitle": "Web Designer & Video Editor",
+    "jobTitle": "Creative Designer",
     "alumniOf": "Abubakar Tafawa Balewa University",
     "sameAs": [
       "https://www.linkedin.com/in/victorvandi",
@@ -65,8 +65,8 @@
     "@type": "OfferCatalog",
     "name": "Services",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design & Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video Editing" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App Development" } }
     ]
   }
 }
@@ -89,7 +89,7 @@
 
   <ul class="nav-menu" id="navMenu">
     <li><a href="/" data-route="home">Home</a></li>
-    <li><a href="/work" data-route="work">Work</a></li>
+    <li data-nav="work" hidden><a href="/work" data-route="work">Work</a></li>
     <li><a href="/services" data-route="services">Services</a></li>
     <li><a href="/about" data-route="about">About</a></li>
     <li><a href="/articles" data-route="articles">Articles</a></li>
@@ -120,31 +120,32 @@
 
       <h1 class="hero-title">
         Websites that <span class="grad-text">convert</span>.<br/>
-        Video that holds <span class="grad-text">attention</span>.
+        Apps that <span class="grad-text">get used</span>.
       </h1>
 
       <div class="hero-sub">
-        <span>Web Design &amp; Development</span>
+        <span>Creative Designer</span>
         <span class="sep" aria-hidden="true"></span>
-        <span>Video Editing</span>
+        <span>Website Design &amp; Development</span>
         <span class="sep" aria-hidden="true"></span>
-        <span>Direct Booking</span>
+        <span>App Development</span>
       </div>
 
       <p class="hero-desc">
-        I'm Victor Vandi — a Computer &amp; Communication Engineering graduate who designs and builds
-        fast, clean websites and edits video for creators, businesses, and organisations.
-        Engineering discipline, creator instincts, and a bias toward work that actually performs.
+        I'm Victor Vandi — a creative designer and Computer &amp; Communication Engineering graduate.
+        I design and build websites and apps for creators, businesses, and organisations:
+        engineering discipline behind the build, design instincts in front of it, and a bias
+        toward work that actually performs.
       </p>
 
       <div class="hero-actions">
         <a href="/contact" data-route="contact" class="btn btn--primary">Start a project <span class="arw">→</span></a>
-        <a href="/work" data-route="work" class="btn btn--ghost">See the work</a>
+        <a href="/services" data-route="services" class="btn btn--ghost" id="heroSecondary">What I build</a>
       </div>
 
       <div class="hero-meta">
         <div class="hero-meta-item"><span class="hero-meta-val">3+ yrs</span><span class="hero-meta-key">Design &amp; build</span></div>
-        <div class="hero-meta-item"><span class="hero-meta-val">0 → 50K</span><span class="hero-meta-key">Channel helped grow</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-val">0 → 50K</span><span class="hero-meta-key">Audience built from zero</span></div>
         <div class="hero-meta-item"><span class="hero-meta-val">&lt; 1 hr</span><span class="hero-meta-key">Typical reply time</span></div>
         <div class="hero-meta-item"><span class="hero-meta-val">Direct</span><span class="hero-meta-key">No middleman</span></div>
       </div>
@@ -161,7 +162,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">What I do</span>
         <h2 class="h-lg">Two disciplines, one standard.</h2>
-        <p class="lede">Every project — a site or a cut — is judged the same way: does it hold attention, and does it move someone to act?</p>
+        <p class="lede">A website and an app are the same problem at different scales: someone arrives, and every screen either earns the next tap or loses them.</p>
       </div>
 
       <div class="grid grid-2">
@@ -170,7 +171,7 @@
           <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg>
           </div>
-          <h3 class="card-title">Web Design &amp; Development</h3>
+          <h3 class="card-title">Website Design &amp; Development</h3>
           <p class="card-text">Portfolio sites, landing pages, and full business websites — designed for clarity, built for speed, and structured so a visitor knows what to do next.</p>
           <ul class="card-list">
             <li>Portfolio &amp; personal brand sites</li>
@@ -182,26 +183,26 @@
         </article>
 
         <article class="card split-card reveal">
-          <div class="split-num">02 / VIDEO</div>
+          <div class="split-num">02 / APP</div>
           <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 10 6-3.5v11L16 14z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg>
           </div>
-          <h3 class="card-title">Video Editing</h3>
-          <p class="card-text">Long-form and short-form edits with pacing that respects the viewer's time — clean cuts, readable captions, motion that supports the story instead of decorating it.</p>
+          <h3 class="card-title">App Development</h3>
+          <p class="card-text">Mobile and web apps taken from idea to something installable — designed first, then built, so the interface makes sense before a line of it ships.</p>
           <ul class="card-list">
-            <li>Long-form YouTube &amp; talking-head edits</li>
-            <li>Shorts, Reels &amp; TikTok verticals</li>
-            <li>Podcast and interview edits</li>
-            <li>Captions, motion titles, colour &amp; sound</li>
+            <li>Mobile apps for iOS &amp; Android</li>
+            <li>Web apps, dashboards &amp; portals</li>
+            <li>App UI/UX design and prototypes</li>
+            <li>Installable progressive web apps</li>
           </ul>
-          <a href="/services" data-route="services" class="btn btn--ghost btn--sm">Video services <span class="arw">→</span></a>
+          <a href="/services" data-route="services" class="btn btn--ghost btn--sm">App services <span class="arw">→</span></a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Selected work -->
-  <section class="section section--tight">
+  <!-- Selected work — revealed by app.js only when PROJECTS has entries -->
+  <section class="section section--tight" id="homeWorkSection" hidden>
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Selected work</span>
@@ -227,8 +228,8 @@
           <p class="card-text">An engineering background means I understand what's happening under the design — performance, structure, and the parts that break when nobody is looking.</p>
         </article>
         <article class="card reveal">
-          <h3 class="card-title">Creator's instincts</h3>
-          <p class="card-text">I helped grow a YouTube channel from zero to 50K+ subscribers. I know what holds a viewer, because I've lost them and had to work out why.</p>
+          <h3 class="card-title">Audience instincts</h3>
+          <p class="card-text">I grew a YouTube channel from zero to 50K+ subscribers. I know what holds someone's attention because I've lost it and had to work out exactly why.</p>
         </article>
         <article class="card reveal">
           <h3 class="card-title">You talk to me</h3>
@@ -244,6 +245,8 @@
 </div>
 
 <!-- ══════════ WORK ══════════ -->
+<!-- Only reachable while PROJECTS in app.js has entries; otherwise /work
+     redirects to /services and this page is never shown. -->
 <div class="page" id="page-work">
   <section class="section">
     <div class="wrap">
@@ -252,24 +255,7 @@
         <h2 class="h-xl">Work.</h2>
         <p class="lede">A small, honest selection. I'd rather show you a few real things than pad a grid.</p>
       </div>
-
-      <h3 class="h-md reveal" style="margin-bottom:22px;">Websites</h3>
-      <div class="grid grid-2" id="workWebGrid"></div>
-
-      <hr class="rule" style="margin-block:clamp(48px,7vw,80px);"/>
-
-      <h3 class="h-md reveal" style="margin-bottom:14px;">Video editing</h3>
-      <p class="lede reveal" style="margin-top:0;margin-bottom:26px;">
-        My video work sits with clients and on my freelance profiles rather than in a public reel.
-        The links below go straight to where the work and the reviews live — and I'll send private
-        samples relevant to your project on request.
-      </p>
-      <div class="platform-panel reveal" id="platformPanel"></div>
-
-      <div class="notice reveal" style="margin-top:26px;">
-        <span aria-hidden="true">🎬</span>
-        <p style="margin:0;"><strong>Want to see something specific?</strong> Tell me the format — long-form YouTube, a vertical short, a podcast cut — and I'll send a matching sample. <a class="link-inline" href="/contact" data-route="contact">Ask for samples</a>.</p>
-      </div>
+      <div class="grid grid-2" id="workGrid"></div>
     </div>
   </section>
 
@@ -288,7 +274,7 @@
         <p class="lede">Two service lines, scoped per project. No packages to squeeze your idea into.</p>
       </div>
 
-      <h3 class="h-md reveal" style="margin-bottom:22px;">Web design &amp; development</h3>
+      <h3 class="h-md reveal" style="margin-bottom:22px;">Website design &amp; development</h3>
       <div class="grid grid-2">
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
@@ -314,27 +300,27 @@
 
       <hr class="rule" style="margin-block:clamp(44px,6vw,72px);"/>
 
-      <h3 class="h-md reveal" style="margin-bottom:22px;">Video editing</h3>
+      <h3 class="h-md reveal" style="margin-bottom:22px;">App development</h3>
       <div class="grid grid-2">
         <article class="card reveal">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18M19 3v18M3 8h18M3 16h18"/></svg></div>
-          <h4 class="card-title">Long-form YouTube edits</h4>
-          <p class="card-text">Full episode edits with retention-aware pacing — dead air removed, b-roll placed with intent, and a structure that keeps people past the first minute.</p>
+          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+          <h4 class="card-title">Mobile apps</h4>
+          <p class="card-text">Apps for iOS and Android — from a single-purpose tool to a full product. Designed around the one thing your user opens it to do, so the rest doesn't get in the way.</p>
         </article>
         <article class="card reveal">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-          <h4 class="card-title">Shorts, Reels &amp; TikTok</h4>
-          <p class="card-text">Vertical cuts built for a scrolling thumb: a hook in the first second, burned-in captions, and pacing tuned for sound-off viewing.</p>
+          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M7 13h4M7 16h8"/></svg></div>
+          <h4 class="card-title">Web apps &amp; dashboards</h4>
+          <p class="card-text">Booking systems, admin panels, client portals, internal tools. The kind of software that has to stay readable when the data gets messy and the user is in a hurry.</p>
         </article>
         <article class="card reveal">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10a7 7 0 0 1-14 0M12 17v5"/></svg></div>
-          <h4 class="card-title">Podcast &amp; interview cuts</h4>
-          <p class="card-text">Multicam or single-cam conversation edits — clean speaker switching, levelled audio, and short clips pulled out for social.</p>
+          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+          <h4 class="card-title">App UI/UX design</h4>
+          <p class="card-text">Screens, flows, and clickable prototypes before anything is built. Cheaper to move a button in a prototype than to rewrite a screen after launch.</p>
         </article>
         <article class="card reveal">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/><path d="M12 3a9 9 0 0 1 0 18" opacity=".35"/></svg></div>
-          <h4 class="card-title">Colour, sound &amp; captions</h4>
-          <p class="card-text">Consistent colour grading, cleaned and levelled audio, accurate captions, and motion titles that match your brand rather than a preset pack.</p>
+          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v14M6 10l6 6 6-6M4 20h16"/></svg></div>
+          <h4 class="card-title">Progressive web apps</h4>
+          <p class="card-text">Installs from the browser, works offline, no app store gatekeeping. Often the fastest route to shipping when you need something in people's hands now.</p>
         </article>
       </div>
 
@@ -344,7 +330,7 @@
         <div class="reveal">
           <h3 class="h-md" style="margin-bottom:8px;">Pricing</h3>
           <p class="card-text" style="margin-bottom:20px;">
-            Every project is quoted on scope — page count, build complexity, footage volume, turnaround.
+            Every project is quoted on scope — page or screen count, build complexity, integrations, turnaround.
             Tell me what you need and you'll get a straight number, not a range that moves later.
           </p>
           <a href="/contact" data-route="contact" class="btn btn--primary btn--sm">Request a quote <span class="arw">→</span></a>
@@ -357,8 +343,22 @@
 
       <hr class="rule" style="margin-block:clamp(44px,6vw,72px);"/>
 
+      <h3 class="h-md reveal" style="margin-bottom:6px;">Where my work and reviews live</h3>
+      <p class="lede reveal" style="margin-top:0;margin-bottom:26px;">
+        Client projects sit with their owners rather than in a public gallery. These profiles carry
+        the work history and the reviews — and I'll send samples matched to your project on request.
+      </p>
+      <div class="platform-panel reveal" id="platformPanel"></div>
+
+      <div class="notice reveal" style="margin-top:26px;">
+        <span aria-hidden="true">✴</span>
+        <p style="margin:0;"><strong>Want to see something specific?</strong> Tell me the type — a landing page, a business site, a mobile app, a dashboard — and I'll send a matching sample. <a class="link-inline" href="/contact" data-route="contact">Ask for samples</a>.</p>
+      </div>
+
+      <hr class="rule" style="margin-block:clamp(44px,6vw,72px);"/>
+
       <h3 class="h-md reveal" style="margin-bottom:6px;">How a project runs</h3>
-      <p class="lede reveal" style="margin-top:0;margin-bottom:26px;">Same four steps whether it's a website or a video.</p>
+      <p class="lede reveal" style="margin-top:0;margin-bottom:26px;">Same four steps whether it's a website or an app.</p>
       <div class="steps reveal" id="stepsList"></div>
     </div>
   </section>
@@ -386,26 +386,28 @@
             <div class="fact"><span class="fact-k">University</span><span class="fact-v">ATBU, Bauchi</span></div>
             <div class="fact"><span class="fact-k">Degree</span><span class="fact-v">Computer &amp; Comm. Eng.</span></div>
             <div class="fact"><span class="fact-k">Experience</span><span class="fact-v">3+ years</span></div>
-            <div class="fact"><span class="fact-k">Own channel</span><span class="fact-v">Helped grow 0 → 50K+</span></div>
-            <div class="fact"><span class="fact-k">Focus</span><span class="fact-v">Web &amp; video</span></div>
+            <div class="fact"><span class="fact-k">Role</span><span class="fact-v">Creative Designer</span></div>
+            <div class="fact"><span class="fact-k">Own channel</span><span class="fact-v">Grown 0 → 50K+</span></div>
+            <div class="fact"><span class="fact-k">Focus</span><span class="fact-v">Websites &amp; apps</span></div>
             <div class="fact"><span class="fact-k">Booking</span><span class="fact-v">Direct</span></div>
           </div>
         </div>
 
         <div class="reveal">
-          <h3 class="h-lg" style="margin-bottom:24px;">I studied engineering.<br/>Then I built things people <span class="grad-text">actually use</span>.</h3>
+          <h3 class="h-lg" style="margin-bottom:24px;">I studied engineering.<br/>I think like a <span class="grad-text">designer</span>.</h3>
 
           <div class="prose">
             <p>
-              I'm a <strong>Computer and Communication Engineering graduate</strong> from
-              <strong>Abubakar Tafawa Balewa University</strong>. Somewhere between lectures I started a
-              YouTube channel — and that turned into the most useful education I've had.
+              I'm a <strong>creative designer</strong> and a <strong>Computer and Communication
+              Engineering graduate</strong> from <strong>Abubakar Tafawa Balewa University</strong>.
+              Somewhere between lectures I started a YouTube channel — and that turned into the most
+              useful education I've had.
             </p>
             <p>
-              I helped grow that channel from zero to <strong>50,000+ subscribers</strong>. Doing it meant
-              learning every part of the pipeline myself: shooting, cutting, pacing, sound, and eventually
-              the website that had to sit behind it all. Nobody handed me a template. I learned by watching
-              things fail and working out exactly which part lost the viewer.
+              I grew that channel from zero to <strong>50,000+ subscribers</strong>. Doing it meant
+              learning every part of the thing myself, right down to the website that had to sit
+              behind it. Nobody handed me a template. I learned by watching things fail and working
+              out exactly which part lost the person on the other end.
             </p>
 
             <div class="pullquote">
@@ -413,21 +415,21 @@
             </div>
 
             <p>
-              That's the through-line in both things I do now. A <strong>website</strong> and a
-              <strong>video edit</strong> are the same problem wearing different clothes: you have a few
-              seconds of someone's attention, and every element either earns that attention or wastes it.
-              The engineering side keeps me honest about performance and structure; the creator side keeps
-              me honest about whether anyone actually cares.
+              That's the through-line in both things I do now. A <strong>website</strong> and an
+              <strong>app</strong> are the same problem at different scales: someone arrives with an
+              intention, and every screen either moves them forward or gives them a reason to leave.
+              The engineering side keeps me honest about performance and structure; the design side
+              keeps me honest about whether any of it is actually pleasant to use.
             </p>
             <p>
-              Today I design and build websites for creators, businesses, and organisations, and edit video
-              for people who need their footage to hold attention rather than just exist. I work
-              <strong>directly with clients</strong> — you talk to the person doing the work, and you hear
-              back fast.
+              Today I design and build <strong>websites and apps</strong> for creators, businesses,
+              and organisations — from a landing page to a full product. I work
+              <strong>directly with clients</strong>: you talk to the person doing the work, and you
+              hear back fast.
             </p>
             <p>
-              If you care more about whether a thing performs than whether it wins a design award, we'll get
-              along fine.
+              If you care more about whether a thing performs than whether it wins a design award,
+              we'll get along fine.
             </p>
           </div>
 
@@ -465,7 +467,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Get in touch</span>
         <h2 class="h-xl">Let's build it.</h2>
-        <p class="lede">Tell me what you need — a website, a video edit, or both. You'll get a real reply from me, not an auto-responder.</p>
+        <p class="lede">Tell me what you need — a website, an app, or both. You'll get a real reply from me, not an auto-responder.</p>
       </div>
 
       <div class="contact-grid">
@@ -509,10 +511,11 @@
                 <option>Landing page</option>
                 <option>Business or organisation website</option>
                 <option>Website redesign or speed fix</option>
-                <option>Long-form video editing</option>
-                <option>Shorts / Reels / TikTok editing</option>
-                <option>Podcast or interview editing</option>
-                <option>Website + video (both)</option>
+                <option>Mobile app (iOS / Android)</option>
+                <option>Web app or dashboard</option>
+                <option>App UI/UX design</option>
+                <option>Progressive web app</option>
+                <option>Website + app (both)</option>
                 <option>Not sure yet — let's talk</option>
               </select>
             </div>
@@ -545,21 +548,21 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="/" class="nav-logo" data-route="home">VICTOR<i>.</i>VANDI</a>
-        <p>Web design, development, and video editing for creators, businesses, and organisations. Direct booking, worldwide.</p>
+        <p>Creative designer building websites and apps for creators, businesses, and organisations. Direct booking, worldwide.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="/services" data-route="services">Web design</a></li>
-            <li><a href="/services" data-route="services">Video editing</a></li>
+            <li><a href="/services" data-route="services">Website design</a></li>
+            <li><a href="/services" data-route="services">App development</a></li>
             <li><a href="/contact" data-route="contact">Request a quote</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Site</h4>
           <ul>
-            <li><a href="/work" data-route="work">Work</a></li>
+            <li data-nav="work" hidden><a href="/work" data-route="work">Work</a></li>
             <li><a href="/about" data-route="about">About</a></li>
             <li><a href="/articles" data-route="articles">Articles</a></li>
             <li><a href="/contact" data-route="contact">Contact</a></li>
